@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=1": { "model": "phantasmagoria:block/procedural_cube1" },
+    "variant=2": { "model": "phantasmagoria:block/procedural_cube2" },
+    "variant=3": { "model": "phantasmagoria:block/procedural_cube3" }
+  }
+}

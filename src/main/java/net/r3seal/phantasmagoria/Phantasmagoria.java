@@ -1,6 +1,7 @@
 package net.r3seal.phantasmagoria;
 
 import net.fabricmc.api.ModInitializer;
+import net.r3seal.phantasmagoria.block.ModBlocks;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,7 @@ public class Phantasmagoria implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+		ModBlocks.registerModBlocks();
 
 		LOGGER.info("Hello Fabric world!");
 	}
