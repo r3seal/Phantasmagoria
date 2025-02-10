@@ -1,14 +1,20 @@
 package net.r3seal.phantasmagoria.entity;
 
 import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.render.entity.PigEntityRenderer;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
+import net.minecraft.client.render.entity.model.EntityModelLayers;
+import net.minecraft.client.render.entity.model.EntityModels;
+import net.minecraft.client.render.entity.model.PigEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.util.Identifier;
+import net.r3seal.phantasmagoria.entity.ModPigModel;
 
 import java.util.Random;
 
-public class ModPigRenderer extends PigEntityRenderer {
+public class ModPigRenderer extends MobEntityRenderer<PigEntity, PigEntityModel<PigEntity>> {
     private static final Identifier[] TEXTURES = new Identifier[]{
             new Identifier("phantasmagoria", "textures/entity/pig/texture1.png"),
             new Identifier("phantasmagoria", "textures/entity/pig/texture2.png"),
@@ -18,7 +24,7 @@ public class ModPigRenderer extends PigEntityRenderer {
     private final Random random;
 
     public ModPigRenderer(EntityRendererFactory.Context context) {
-        super(context);
+        super(context, new ModPigModel(context.getPart(EntityModelLayers.PIG)), 0.7F);
         this.random = new Random();
     }
 
